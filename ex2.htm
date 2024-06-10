@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="javascript.jpeg" alt="Example Image"><br>
+    <input id="inputElement" type="text" placeholder="Saisissez une valeur de 9 caractères minimum"><br>
+    <button id="removeClickListener">Supprimer l'écouteur d'événement sur l'image</button>
+    <script>
+        function f() {
+            alert("vous avez cliquer deux fois sur l’image");
+        };
+        document.getElementById("img").addEventListener("dblclick", f);
+
+        document.getElementById("removeClickListener").onclick = function(){
+            document.getElementById("img").removeEventListener("dblclick", f);
+        };
+
+        function f2(){
+            var input = document.getElementById("inputElement").value;
+            if(input.length < 9){
+                document.getElementById("inputElement").style.borderColor = "red";
+            }else {
+                inputElement.style.borderColor = "black";
+            }
+        };
+        document.getElementById("inputElement").addEventListener("blur", f2);
+
+    </script>
+</body>
+</html>
